@@ -20,12 +20,12 @@ Item.destroy_all
 puts "Creating Data "
 
 
-User.create(email_address: "jonathantan@brandeis.edu", password_digest: BCrypt::Password.create('password'))
+User.create(email_address: "jonathantan@brandeis.edu", password_digest: BCrypt::Password.create('password'), first_name: "Jon", last_name: "Tan", phone_number: "781-296-7750")
 
-Item.create(name: "Buffalo Exchange", description: " Set of 6. Served with Roqfuefort Dip. Filled with our buffalo pulled chicken, celery, tarragon ", price: 8.50, image:"https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" )
-Item.create(name: "The Traditional", description: "  Set of 6. Served with traditional soy-vinegar dipping sauce . Filled with pork, chive, napa cabbage, and shitake mushroom", price: 7.50, image: "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" )
-Item.create(name: "Italiano", description: "Like a ravioli but not. Set of 6. Finished in a brown butter sage sauce. Filled with our ricotta, roasted shiitake mushroom, and lots of parmasan (Veg) ", price: 8.50, image:'https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'  )
-Item.create(name: "Kimchi Tofu", description: " Set of 6. Served with traditional soy-vinegar dipping sauce. Filled with tofu, glass noodles, kimchi, and beansprouts (Vegan) ", price: 7.50, image: "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" )
+Item.create(name: "Buffalo Exchange", description: " Set of 6. Served with Roqfuefort Dip. Filled with our buffalo pulled chicken, celery, tarragon ", price: 850, image:"https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" )
+Item.create(name: "The Traditional", description: "  Set of 6. Served with traditional soy-vinegar dipping sauce . Filled with pork, chive, napa cabbage, and shitake mushroom", price: 750, image: "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" )
+Item.create(name: "Italiano", description: "Like a ravioli but not. Set of 6. Finished in a brown butter sage sauce. Filled with our ricotta, roasted shiitake mushroom, and lots of parmasan (Veg) ", price: 850, image:'https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'  )
+Item.create(name: "Kimchi Tofu", description: " Set of 6. Served with traditional soy-vinegar dipping sauce. Filled with tofu, glass noodles, kimchi, and beansprouts (Vegan) ", price: 750, image: "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" )
 
 Order.create(user_id: 1)
 
