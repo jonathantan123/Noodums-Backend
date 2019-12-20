@@ -20,6 +20,7 @@ Item.destroy_all
 puts "Creating Data "
 
 
+User.create(email_address: "", password_digest: BCrypt::Password.create('password'), first_name: "", last_name: "", phone_number: "")
 User.create(email_address: "jonathantan@brandeis.edu", password_digest: BCrypt::Password.create('password'), first_name: "Jon", last_name: "Tan", phone_number: "781-296-7750")
 
 Item.create(name: "Buffalo Exchange", description: " Set of 6. Served with Roqfuefort Dip. Filled with our buffalo pulled chicken, celery, tarragon ", price: 850, image:"https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" )

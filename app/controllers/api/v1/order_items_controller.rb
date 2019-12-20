@@ -10,6 +10,7 @@ class Api::V1::OrderItemsController < ApplicationController
     def create
 
         order = Order.create(user_id: params[:user_id])
+
     
         order_items = params[:array] 
             
@@ -17,6 +18,7 @@ class Api::V1::OrderItemsController < ApplicationController
                 
                 order.order_items.create(item_id: item[:id]) 
             end
+        
         
         puts "sucuess"
     end

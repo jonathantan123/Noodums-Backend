@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     
     
     post '/login', to: 'login#login'
+    post '/charges', to: 'charges#session'
+
     
   end
