@@ -1,4 +1,4 @@
 class OrderSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :items
 end
