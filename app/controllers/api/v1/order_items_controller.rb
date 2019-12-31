@@ -8,19 +8,17 @@ class Api::V1::OrderItemsController < ApplicationController
 
 
     def create
-
-        order = Order.create(user_id: params[:user_id])
-
+        
+        order = Order.create(user_id: params[:user_id], total_price: params[:total], subtotal: params[:subtotal])
     
         order_items = params[:array] 
             
             order_items.each do |item|
                 
-                order.order_items.create(item_id: item[:id]) 
+                order.order_items.create(item_id: item[:id], quantity: item[:quantity]) 
             end
         
         
-        puts "sucuess"
     end
 
 
