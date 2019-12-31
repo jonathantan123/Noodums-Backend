@@ -4,21 +4,27 @@ class Api::V1::FavoritesController < ApplicationController
 
             user = User.find(params[:user_id])
 
-             if user.favorites.any? { |favorite| favorite.item_id === params[:item_id] }
+            foundItem= user.favorites.select { |favorite| favorite.item_id === params[:item_id] }
+
+             if foundItem
+
                 favorite = Favorite.create(item_id: params[:item_id], user_id: params[:user_id])
 
                 render json: favorite
              else 
+                
 
-                render json: {message: "this has already been added!"}
+                render json: foundItem
                 
              end 
         end 
 
 
-         def destroy
-            debugger
+         def show 
+            favorite = Favorite.find_by(item_id: params[:id])
+            Favorite.destroy(favorite.id)
             
-        end'
+            
+        end
 
 end

@@ -34,7 +34,7 @@ OrderItem.create(order_id: 1,item_id: 1 )
 OrderItem.create(order_id: 1,item_id: 2 ) 
 OrderItem.create(order_id: 1,item_id: 3 ) 
 
-Favorite.create(user_id: 1, item_id: 2)
+Favorite.create(user_id: 2, item_id: 2)
 
 
 
