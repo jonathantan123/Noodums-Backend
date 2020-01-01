@@ -12,8 +12,7 @@ class Api::V1::FavoritesController < ApplicationController
 
                 render json: favorite
              else 
-                
-
+        
                 render json: foundItem
                 
              end 
