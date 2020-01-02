@@ -11,10 +11,14 @@ class Api::V1::UsersController < ApplicationController
         
         user = User.new(
             email_address: params[:email_address],
-            password: params[:password])
+            password: params[:password], 
+            first_name: params[:first_name], 
+            last_name: params[:last_name], 
+            phone_number: params[:phone_number]
+            )
         
         if user.save 
-            render json: user  
+            render json: UserSerializer.new(user) 
         else 
             render json: {errors: user.errors.full_messages}
         
@@ -28,6 +32,10 @@ def update
     
 
 end 
+
+
+private 
+
 
 
 
