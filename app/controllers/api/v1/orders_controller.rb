@@ -3,12 +3,12 @@ class Api::V1::OrdersController < ApplicationController
 
     @@revenues = []
     @@number_of_orders= []
+    @@quantity= []
+    
 
 
     def getRevenueByMonth(year)
         
-  
-      
         for i in 1..12 do
 
             time = DateTime.new(year, i)
@@ -24,33 +24,39 @@ class Api::V1::OrdersController < ApplicationController
         end 
 
         
+    end 
 
+    def getMostCommonItems(year, item_id)
+        
+        items= OrderItem.all.select{|order| order.item_id === item_id }
 
+        num = items.map{|order| order.quantity}.reduce(0){|sum, x| sum + x }
+
+        @@quantity.push(num)
 
     end 
 
-        def self.ordersByMonth(year, month)
-            time = DateTime.new(year, month)
-
-            number_of_orders = Order.where("created_at >= ? and created_at <= ? ", time.beginning_of_month, time.end_of_month).length
-
-            return number_of_orders
-
-        end 
 
 
+    def index
 
-    def index 
+        Item.all.map{|item| getMostCommonItems(2019, item.id)}
+        
         getRevenueByMonth(2019)
 
 
         render json: {
             revenue: @@revenues,
-            number_of_orders: @@number_of_orders 
+            number_of_orders: @@number_of_orders,
+            quantity: @@quantity
+
         }
 
         @@revenues = []
         @@number_of_orders= []
+        @@quantity= []
+
+
 
 
        
