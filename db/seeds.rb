@@ -21,7 +21,7 @@ puts "Creating Data "
 
 
 User.create(email_address: "ADMIN", password_digest: BCrypt::Password.create('password'), first_name: "", last_name: "", phone_number: "")
-User.create()
+User.create(email_address: "", password_digest: BCrypt::Password.create('password'), first_name: "", last_name: "", phone_number: "")
 User.create(email_address: "jonathantan@brandeis.edu", password_digest: BCrypt::Password.create('password'), first_name: "Jon", last_name: "Tan", phone_number: "781-296-7750")
 User.create(email_address: "test@gmail.com", password_digest: BCrypt::Password.create('password'), first_name: "Mary", last_name: "Farner", phone_number: "781-888-1819")
 
