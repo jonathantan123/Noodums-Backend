@@ -2,18 +2,25 @@ class Api::V1::FavoritesController < ApplicationController
 
         def create 
 
+
             user = User.find(params[:user_id])
 
-            foundItem= user.favorites.select { |favorite| favorite.item_id === params[:item_id] }
+            foundItem= user.favorites.find { |favorite| favorite.item_id === params[:item_id] }
+            
+            
 
-             if foundItem
-
+             if foundItem === nil 
                 favorite = Favorite.create(item_id: params[:item_id], user_id: params[:user_id])
-
+                
                 render json: favorite
+                
+             
              else 
+                debugger
+              
+
+                render json: {error: "nothing found"}
         
-                render json: foundItem
                 
              end 
         end 

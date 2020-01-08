@@ -26,7 +26,7 @@ class Api::V1::UsersController < ApplicationController
 end 
 
 def update 
-    debugger
+    
 
     user = User.find(params[:id])
     user.update(phone_number: params[:phone_number], first_name: params[:first_name], last_name: params[:last_name], email_address: params[:email_address], password: params[:password] )
