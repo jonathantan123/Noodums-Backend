@@ -1,16 +1,10 @@
 require "stripe"
 
-
-
 class ChargesController < ApplicationController
 
     def session
         
- 
-
         Stripe.api_key = APIKEY
-
-
             session = Stripe::Checkout::Session.create(
 
             payment_method_types: ['card'],
@@ -30,21 +24,7 @@ class ChargesController < ApplicationController
             success_url: 'https://noodums-app.herokuapp.com',
             cancel_url: 'https://noodums-app.herokuapp.com/checkout',
             )
-
-
             render json: session
             
-
-
-
-            puts "hi"
-    
-    
-    end 
-     
-
-
-
-
-
-end
+        end
+    end
