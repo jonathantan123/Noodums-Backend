@@ -27,8 +27,8 @@ class ChargesController < ApplicationController
 
         
         ],
-            success_url: 'https://noodums-app-api.herokuapp.com',
-            cancel_url: 'https://noodums-app-api.herokuapp.com/cart',
+            success_url: 'https://noodums-app.herokuapp.com',
+            cancel_url: 'https://noodums-app.herokuapp.com/checkout',
             )
 
 
